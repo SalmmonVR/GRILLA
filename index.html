@@ -11,7 +11,7 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: #050505;
+            background: linear-gradient(#050505, #0b0b0b);
             color: white;
             overflow-x: hidden;
         }
@@ -20,8 +20,27 @@
             font-family: 'Orbitron', sans-serif;
         }
 
-        .glow {
+        @keyframes snowfall {
+            0% { transform: translateY(-10px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 14px;
+            animation: snowfall 8s linear infinite;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .glow-red {
             text-shadow: 0 0 10px #ff2b2b, 0 0 20px #ff2b2b;
+        }
+
+        .glow-green {
+            text-shadow: 0 0 10px #2bff54, 0 0 20px #2bff54;
         }
 
         @keyframes fadeUp {
@@ -29,72 +48,65 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         header {
-            padding: 120px 20px;
+            padding: 140px 20px;
             text-align: center;
-            background: radial-gradient(circle at top, #1a1a1a, #050505);
-            animation: fadeIn 1.2s ease-out;
+            background: radial-gradient(circle at top, #222, #050505);
+            animation: fadeUp 1s ease-out;
             position: relative;
+            border-bottom: 4px solid #ff2b2b;
+            box-shadow: 0 0 25px #ff2b2b;
         }
 
         header::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://i.imgur.com/8aV5ChT.png') repeat;
-            opacity: 0.03;
-            pointer-events: none;
+            inset: 0;
+            background: url('https://i.imgur.com/9Tcq7UZ.png') repeat;
+            opacity: 0.05;
+            mix-blend-mode: lighten;
         }
 
         h1 {
-            font-size: 60px;
+            font-size: 70px;
             margin-bottom: 10px;
-            animation: fadeUp 1s ease-out;
         }
 
         p {
-            opacity: 0.85;
-            font-size: 20px;
-            animation: fadeUp 1.5s ease-out;
+            opacity: 0.9;
+            font-size: 22px;
         }
 
+        /* BUTTON */
         .download-btn {
             margin-top: 35px;
-            padding: 18px 40px;
-            font-size: 22px;
+            padding: 20px 45px;
+            font-size: 24px;
             border: none;
-            border-radius: 10px;
-            background: linear-gradient(90deg, #ff1e1e, #ff4d4d);
+            border-radius: 12px;
+            background: linear-gradient(90deg, #ff1e1e, #ff6b6b);
             color: white;
             cursor: pointer;
             transition: 0.3s;
+            box-shadow: 0 0 20px #ff1e1e;
             font-family: 'Orbitron', sans-serif;
-            animation: fadeUp 1.8s ease-out;
-            box-shadow: 0 0 15px #ff1e1e;
+            border: 3px solid white;
         }
 
         .download-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px #ff4d4d;
+            transform: scale(1.07);
+            box-shadow: 0 0 30px #ff4d4d;
         }
 
         .section {
-            padding: 70px 20px;
+            padding: 80px 20px;
             max-width: 1100px;
             margin: auto;
             animation: fadeUp 1.2s ease-out;
         }
 
         .section h2 {
-            font-size: 40px;
+            font-size: 45px;
             margin-bottom: 25px;
             text-align: center;
             color: #ff4d4d;
@@ -105,32 +117,36 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
         }
 
         .feature {
-            background: #111;
-            padding: 25px;
-            border-radius: 12px;
-            width: 310px;
+            background: rgba(20, 20, 20, 0.95);
+            padding: 28px;
+            border-radius: 15px;
+            width: 320px;
             text-align: center;
-            border: 1px solid #2d2d2d;
+            border: 3px solid #fff;
             transition: 0.3s;
-            box-shadow: 0 0 15px #111;
+            box-shadow: 0 0 25px #111;
+            background-image: url("https://i.imgur.com/XUQm9nC.png");
+            background-size: cover;
+            background-blend-mode: overlay;
         }
 
         .feature:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 25px #ff2b2b;
-            border-color: #ff2b2b;
+            transform: translateY(-10px);
+            box-shadow: 0 0 35px #ff3b3b;
+            border-color: #ff3b3b;
         }
 
         .feature h3 {
-            font-size: 22px;
+            font-size: 24px;
             margin-bottom: 12px;
-            color: #ff4d4d;
+            color: #ff5c5c;
         }
 
+        /* SCREENSHOTS */
         .screenshot-box {
             display: flex;
             justify-content: center;
@@ -141,48 +157,60 @@
 
         .screenshot {
             width: 320px;
-            height: 180px;
-            background: #222;
+            height: 190px;
             border-radius: 12px;
-            border: 1px solid #333;
+            border: 2px solid white;
             background-size: cover;
             background-position: center;
-            transition: 0.3s;
-            box-shadow: 0 0 10px #000;
+            transition: 0.25s;
+            background: #222;
+            box-shadow: 0 0 15px black;
         }
 
         .screenshot:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px #ff2b2b;
-            border-color: #ff2b2b;
+            transform: scale(1.06);
+            border-color: #ff3b3b;
+            box-shadow: 0 0 25px #ff3b3b;
         }
     </style>
 </head>
 <body>
 
+<script>
+    for (let i = 0; i < 60; i++) {
+        let snow = document.createElement("div");
+        snow.className = "snowflake";
+        snow.innerHTML = "❄";
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.animationDuration = (6 + Math.random() * 5) + "s";
+        snow.style.opacity = Math.random();
+        snow.style.fontSize = (10 + Math.random() * 10) + "px";
+        document.body.appendChild(snow);
+    }
+</script>
+
 <header>
-    <h1 class="glow">GRILLA</h1>
-    <p>A fast and immersive VR experience.</p>
-    
+    <h1 class="glow-red">GRILLA</h1>
+    <p>Fast. Fun. Better.
     <button class="download-btn">Download APK (Coming Soon)</button>
 </header>
 
 <section class="section">
-    <h2 class="glow">Game Modes</h2>
+    <h2 class="glow-red">Game Modes</h2>
     <div class="features-list">
         <div class="feature">
             <h3>🎮 Fun Game Modes</h3>
-            <p>Play multiple exciting game modes like Only Up, Floor is lava and much more!</p>
+            <p>Enjoy exciting challenges like Only Up, Floor Is Lava, and more!</p>
         </div>
         <div class="feature">
             <h3>🗺️ Maps</h3>
-            <p>Explore different themed environments and play with friendsas you find cool and unique stuff around the maps.</p>
+            <p>Explore fun maps like forest and 0 gravity and so much more!.</p>
         </div>
     </div>
 </section>
 
 <section class="section">
-    <h2 class="glow">Screenshots</h2>
+    <h2 class="glow-red">Screenshots</h2>
     <div class="screenshot-box">
         <div class="screenshot" id="s1"></div>
         <div class="screenshot" id="s2"></div>
