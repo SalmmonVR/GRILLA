@@ -1,106 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRILLA</title>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-        body {
-            margin: 0;
-            font-family: 'Orbitron', sans-serif;
-            background: radial-gradient(circle at center, #0a0a0a, #000000 70%);
-            color: white;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        header {
-            padding: 60px 10px 40px;
-        }
-
-        h1 {
-            font-size: 58px;
-            margin-bottom: 15px;
-            color: #00eaff;
-            letter-spacing: 3px;
-            text-shadow: 0 0 12px #00eaff;
-        }
-
-        p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 50px;
-            line-height: 1.5;
-            color: #b6faff;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 18px 40px;
-            font-size: 24px;
-            background: #00eaff;
-            color: #000;
-            border-radius: 14px;
-            text-decoration: none;
-            margin: 20px 10px;
-            font-weight: bold;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 0 15px #00eaff;
-        }
-
-        .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 25px #00eaff;
-        }
-
-        #vrBox {
-            margin-top: 20px;
-            padding-bottom: 60px;
-        }
-
-        #vrNotice {
-            margin-bottom: 25px;
-            font-size: 22px;
-            color: #00eaff;
-            text-shadow: 0 0 10px #00eaff;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 42px; }
-            .btn { font-size: 20px; padding: 16px 30px; }
-            p { font-size: 18px; }
-        }
-    </style>
-
-    <script>
-        function detectVR() {
-            let ua = navigator.userAgent;
-            if (ua.includes("OculusBrowser") || ua.includes("PicoBrowser")) {
-                document.getElementById("vrNotice").style.display = "block";
-            }
-        }
-        window.onload = detectVR;
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRILLA</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
 <body>
 
-    <header>
-        <h1>GRILLA</h1>
-        <p>Thanks for playing GRILLA We are very happy you have decidedto play this game this game is in beta so please expect bugs anyways have fun!</p>
-    </header>
+<div id="loader">
+    <div class="spin"></div>
+    <p>Loading...</p>
+</div>
 
-    <div id="vrBox">
-        <div id="vrNotice" style="display:none;">✔ VR headset detected — installation supported</div>
-
-        <a class="btn" href="grilla.apk" download>Download APK</a>
-
-        <a class="btn" href="intent://launch/#Intent;scheme=grilla;package=com.grilla.vr;end">
-            Launch GRILLA
-        </a>
+<nav>
+    <div class="nav-left">
+        <button id="menuBtn">&#9776;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="https://discord.gg/">Discord</a>
     </div>
+    <div class="nav-right">
+        <img src="yourpfp.png">
+    </div>
+</nav>
+
+<div id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="https://discord.gg/">Discord</a>
+</div>
+
+<header>
+    <h1>GRILLA</h1>
+    <p>Thanks for playing GRILLA! This game is in beta, so expect bugs. Have fun!</p>
+</header>
+
+<div class="portal-container">
+    <div class="portal"></div>
+</div>
+
+<div id="vrBox">
+    <div id="vrNotice" style="display:none;">✔ VR headset detected — installation supported</div>
+
+    <a class="btn" href="grilla.apk" download>Download APK</a>
+    <a class="btn" href="intent://launch/#Intent;scheme=grilla;package=com.grilla.vr;end">Launch GRILLA</a>
+</div>
 
 </body>
 </html>
