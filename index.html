@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,60 +6,72 @@
     <title>GRILLA</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #e8f0ff, #ffffff);
-            color: #1a1a1a;
+            font-family: 'Orbitron', sans-serif;
+            background: radial-gradient(circle at center, #0a0a0a, #000000 70%);
+            color: white;
             text-align: center;
+            padding: 0 20px;
         }
 
         header {
-            padding: 50px 20px;
+            padding: 60px 10px 40px;
         }
 
         h1 {
-            font-size: 52px;
-            margin-bottom: 10px;
-            color: #1d4ed8;
-            letter-spacing: 2px;
+            font-size: 58px;
+            margin-bottom: 15px;
+            color: #00eaff;
+            letter-spacing: 3px;
+            text-shadow: 0 0 12px #00eaff;
         }
 
         p {
             font-size: 20px;
-            margin: 0 auto 40px;
             max-width: 700px;
-            line-height: 1.6;
+            margin: 0 auto 50px;
+            line-height: 1.5;
+            color: #b6faff;
         }
 
         .btn {
             display: inline-block;
-            padding: 22px 45px;
-            font-size: 26px;
-            background: #1d4ed8;
-            color: white;
-            border-radius: 16px;
+            padding: 18px 40px;
+            font-size: 24px;
+            background: #00eaff;
+            color: #000;
+            border-radius: 14px;
             text-decoration: none;
-            margin: 20px;
+            margin: 20px 10px;
             font-weight: bold;
-            transition: transform 0.2s ease, background 0.2s;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0 15px #00eaff;
         }
 
         .btn:hover {
-            background: #163bb8;
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px #00eaff;
         }
 
         #vrBox {
             margin-top: 20px;
-            padding: 20px;
-            font-size: 24px;
+            padding-bottom: 60px;
         }
 
         #vrNotice {
             margin-bottom: 25px;
             font-size: 22px;
-            color: #1d4ed8;
+            color: #00eaff;
+            text-shadow: 0 0 10px #00eaff;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 42px; }
+            .btn { font-size: 20px; padding: 16px 30px; }
+            p { font-size: 18px; }
         }
     </style>
 
@@ -78,7 +89,7 @@
 
     <header>
         <h1>GRILLA VR</h1>
-        <p>A clean, fast VR experience built for instant play on your VR headset.</p>
+        <p>A fast, clean VR experience made for instant play — optimized for standalone VR headsets.</p>
     </header>
 
     <div id="vrBox">
