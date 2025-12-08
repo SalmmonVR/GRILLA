@@ -9,69 +9,67 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f2f6fc;
+            background: linear-gradient(135deg, #e8f0ff, #ffffff);
             color: #1a1a1a;
             text-align: center;
         }
 
         header {
-            background: #ffffff;
-            padding: 30px 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 50px 20px;
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 10px;
-            color: #1976d2;
+            color: #1d4ed8;
+            letter-spacing: 2px;
         }
 
         p {
             font-size: 20px;
-            margin: 10px auto 30px;
+            margin: 0 auto 40px;
             max-width: 700px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .btn {
             display: inline-block;
-            padding: 20px 40px;
-            font-size: 28px;
-            background: #1976d2;
+            padding: 22px 45px;
+            font-size: 26px;
+            background: #1d4ed8;
             color: white;
-            border-radius: 12px;
+            border-radius: 16px;
             text-decoration: none;
             margin: 20px;
-            transition: 0.2s ease;
+            font-weight: bold;
+            transition: transform 0.2s ease, background 0.2s;
         }
 
         .btn:hover {
-            background: #0f5bb5;
+            background: #163bb8;
+            transform: translateY(-3px);
         }
 
         #vrBox {
-            margin-top: 30px;
+            margin-top: 20px;
             padding: 20px;
-            font-size: 22px;
+            font-size: 24px;
         }
 
-        footer {
-            margin-top: 60px;
-            padding: 20px;
-            font-size: 16px;
-            color: #777;
+        #vrNotice {
+            margin-bottom: 25px;
+            font-size: 22px;
+            color: #1d4ed8;
         }
     </style>
 
     <script>
         function detectVR() {
             let ua = navigator.userAgent;
-
             if (ua.includes("OculusBrowser") || ua.includes("PicoBrowser")) {
                 document.getElementById("vrNotice").style.display = "block";
             }
         }
-
         window.onload = detectVR;
     </script>
 </head>
@@ -79,15 +77,13 @@
 
     <header>
         <h1>GRILLA VR</h1>
-        <p>A fast, simple, clean VR experience. Download and play instantly on your VR headset.</p>
+        <p>A clean, fast VR experience built for instant play on your VR headset.</p>
     </header>
 
     <div id="vrBox">
-        <div id="vrNotice" style="display:none; margin-bottom: 20px; color:#1976d2;">
-            ✔ You are using a VR headset browser — installation will work!
-        </div>
+        <div id="vrNotice" style="display:none;">✔ VR headset detected — installation supported</div>
 
-        <a class="btn" href="grilla.apk" download>Download & Install APK</a>
+        <a class="btn" href="grilla.apk" download>Download APK</a>
 
         <a class="btn" href="intent://launch/#Intent;scheme=grilla;package=com.grilla.vr;end">
             Launch GRILLA
