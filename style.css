@@ -6,7 +6,7 @@ body {
     background: linear-gradient(135deg, #020202, #0a0a0a, #000000);
     background-size: 400% 400%;
     animation: bgmove 12s ease infinite;
-    color: white;
+    color: #8eb7c7;
 }
 
 @keyframes bgmove {
@@ -32,7 +32,7 @@ nav {
 
 .nav-left a {
     margin-right: 20px;
-    color: #00eaff;
+    color: #7ad0ff;
     font-weight: 700;
     text-decoration: none;
     transition: 0.2s;
@@ -47,13 +47,13 @@ nav {
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    border: 2px solid #00eaff;
+    border: 2px solid #7ad0ff;
 }
 
 #menuBtn {
     background: none;
     border: none;
-    color: #00eaff;
+    color: #7ad0ff;
     font-size: 30px;
     display: none;
 }
@@ -75,7 +75,7 @@ nav {
     padding: 20px;
     text-decoration: none;
     font-size: 22px;
-    color: #00eaff;
+    color: #7ad0ff;
 }
 
 header {
@@ -85,15 +85,15 @@ header {
 
 h1 {
     font-size: 60px;
-    color: #00eaff;
-    text-shadow: 0 0 12px #00eaff;
+    color: #7ad0ff;
+    text-shadow: 0 0 10px #2c87a3;
 }
 
 p {
     font-size: 20px;
     max-width: 700px;
     margin: auto;
-    color: #b6faff;
+    color: #8eb7c7;
     padding: 20px;
 }
 
@@ -101,37 +101,39 @@ p {
     display: inline-block;
     padding: 18px 40px;
     font-size: 24px;
-    background: #00eaff;
+    background: #7ad0ff;
     color: #000;
     border-radius: 14px;
     text-decoration: none;
     margin: 20px 10px;
     font-weight: bold;
-    box-shadow: 0 0 15px #00eaff;
+    box-shadow: 0 0 15px #7ad0ff;
     transition: 0.2s;
 }
 
-.portal-container {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px #7ad0ff;
 }
 
-.portal {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: conic-gradient(#00eaff, #00ffa6, #00eaff);
-    animation: spin 2s linear infinite;
-    filter: blur(2px);
-    box-shadow: 0 0 40px #00eaff;
+#vrBox {
+    text-align: center;
+    padding-bottom: 60px;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg) scale(1); }
-    100% { transform: rotate(360deg) scale(1.02); }
+#vrNotice {
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #7ad0ff;
+    text-shadow: 0 0 8px #2c87a3;
 }
 
+.aboutSection {
+    padding-top: 160px;
+    text-align: center;
+}
+
+/* Loading screen */
 #loader {
     position: fixed;
     top: 0;
@@ -149,7 +151,7 @@ p {
 .spin {
     width: 60px;
     height: 60px;
-    border: 5px solid #00eaff;
+    border: 5px solid #7ad0ff;
     border-top-color: transparent;
     border-radius: 50%;
     animation: load 1s linear infinite;
